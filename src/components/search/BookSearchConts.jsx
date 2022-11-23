@@ -4,17 +4,19 @@ import { fetchAPI } from '../../utils/fetchAPI'
 import { Loader } from '../index'
 const BookSearchConts = () => {
     const { searchKeyword, answerKeyword } = useParams()
+
     const [books, setBooks] = useState(null)
     const [page, setPage] = useState(1)
     setPage(1)
     //&startIndex=1 << 페이징할때 쓸거
+
     useEffect(() => {
         const fetchBooksData = async () => {
             const data = await fetchAPI(`q=${searchKeyword}&startIndex=${page}`)
             setBooks(data)
         }
         fetchBooksData()
-    }, [searchKeyword])
+    }, [searchKeyword, page])
 
     if (!books) return <Loader />
     console.log(books)
