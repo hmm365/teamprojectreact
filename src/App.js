@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import { MainConts, QuizConts, BookSearchConts, TagConts, LeftAside, RightAside } from './components/index'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <LeftAside />
+            {/* <main id="main"> */}
+            <Routes>
+                <Route path="/" element={<MainConts />}></Route>
+                <Route path="/quiz/" element={<QuizConts />}></Route>
+                {/* <Route path="/bookmain/" element={<BookMain />}></Route> */}
+                <Route path="/booksearch/:searchKeyword/:answerKeyword" element={<BookSearchConts />}></Route>
+                <Route path="/tag/" element={<TagConts />}></Route>
+            </Routes>
+            {/* </main> */}
+            <RightAside />
+        </BrowserRouter>
+    )
 }
 
-export default App;
+export default App

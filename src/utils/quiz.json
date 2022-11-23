@@ -1,0 +1,102 @@
+{
+    "quiz": [
+        {
+            "num": 1,
+            "questions": "01. 당신의 취미는 무엇인가요?",
+            "icon": "quiz1.png",
+            "answer": [
+                {
+                    "desc": "독서하기",
+                    "score": 1
+                },
+                {
+                    "desc": "음악듣기",
+                    "score": 2
+                },
+                {
+                    "desc": "게임하기",
+                    "score": 3
+                }
+            ]
+        },
+        {
+            "num": 2,
+            "questions": "02. 오늘 당신의 기분은 어떠신가요?",
+            "icon": "quiz1.png",
+            "answer": [
+                {
+                    "desc": "행복하다.",
+                    "score": 0
+                },
+                {
+                    "desc": "우울하다.",
+                    "score": 1
+                },
+                {
+                    "desc": "화가난다.",
+                    "score": -1
+                }
+            ]
+        },
+        {
+            "num": 3,
+            "questions": "03. 오늘 하루는 어떻게 지내실 건가요?",
+            "icon": "quiz1.png",
+            "answer": [
+                {
+                    "desc": "즐겁게",
+                    "score": 2
+                },
+                {
+                    "desc": "평화롭게",
+                    "score": 0
+                },
+                {
+                    "desc": "활기차게",
+                    "score": 1
+                }
+            ]
+        },
+        {
+            "num": 4,
+            "result": [
+                {
+                    "marks": 1,
+                    "answer": "무협",
+                    "icon": "quizResult.png",
+                    "search": "무협+소설"
+                },
+                {
+                    "marks": 2,
+                    "answer": "로맨스",
+                    "icon": "quizResult.png",
+                    "search": "사랑+소설"
+                },
+                {
+                    "marks": 3,
+                    "answer": "현대",
+                    "icon": "quizResult.png",
+                    "search": "현대+소설"
+                },
+                {
+                    "marks": 4,
+                    "answer": "음악",
+                    "icon": "quizResult.png",
+                    "search": "음악+소설"
+                },
+                {
+                    "marks": 5,
+                    "answer": "게임",
+                    "icon": "quizResult.png",
+                    "search": "게임+소설"
+                },
+                {
+                    "marks": 6,
+                    "answer": "SF",
+                    "icon": "quizResult.png",
+                    "search": "SF+소설"
+                }
+            ]
+        }
+    ]
+}
