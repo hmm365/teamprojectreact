@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchAPI } from '../../utils/fetchAPI'
 import { Loader } from '../index'
+import { bgadd } from '../../utils/loadBody'
 const BookSearchConts = () => {
     const { searchKeyword, answerKeyword } = useParams()
     const [books, setBooks] = useState(null)
@@ -21,7 +22,7 @@ const BookSearchConts = () => {
     console.log(books)
     return (
         <>
-            <section id="resultCont" className="container">
+            <section id="resultCont" className="container" onLoad={bgadd}>
                 <div className="resultSearch">
                     <div className="resultSearch__info">
                         <h2>{answerKeyword.replace('!@@!', '/')}</h2>

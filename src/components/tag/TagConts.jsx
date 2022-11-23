@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { bgadd } from '../../utils/loadBody'
 const TagConts = () => {
     return (
         <>
-            <section id="tagCont" className="container">
+            <section id="tagCont" className="container" onLoad={bgadd}>
                 <div className="tagWrap">
                     <div className="taginner">
                         <Link to="/booksearch/사랑+소설/로맨스에 빠진 사랑" className="tag__first">

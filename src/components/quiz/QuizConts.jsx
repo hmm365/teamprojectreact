@@ -2,6 +2,7 @@ import React from 'react'
 import quizData from '../../utils/quiz.json'
 import { QuizQuestions, QuizResult } from '../index'
 import { useState } from 'react'
+import { bgadd } from '../../utils/loadBody'
 
 const QuizConts = () => {
     const [num, setNum] = useState(1)
@@ -23,7 +24,7 @@ const QuizConts = () => {
 
     return (
         <>
-            <section id="quizCont" className="container">
+            <section id="quizCont" className="container" onLoad={bgadd}>
                 <div className="quizCont__wrap">
                     <div className="quizCont__inner">
                         <div className="quiz__questions">{Questions}</div>
