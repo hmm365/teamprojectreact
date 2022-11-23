@@ -25,6 +25,7 @@
 }
 .quiz__questionsImg {
     width: 50%;
+    margin-bottom: 30px;
 }
 .quiz__button {
     display: block;
