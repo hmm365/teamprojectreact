@@ -103,7 +103,7 @@ body {
     /* background: rgb(84, 47, 47); */
 }
 
-#aisde {
+#aside {
     position: fixed;
     top: 0;
     right: 0;
@@ -115,7 +115,7 @@ body {
     border-radius: 0px 20px 20px 0px;
     padding: 17px;
 }
-#aisde.hide {
+#aside.hide {
     transform: translateX(1000px);
     overflow: hidden;
 }

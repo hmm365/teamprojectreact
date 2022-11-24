@@ -26,7 +26,7 @@ const TagConts = () => {
                             <p>SF / 판타지</p>
                         </Link>
                     </div>
-                    <Link to="/booksearch/" className="tag__right">
+                    <Link to="/booksearch/사랑+소설/로맨스에 빠진 사랑" className="tag__right">
                         <span className="tag__title">이런 건 어떠신가요?</span>
                         <p>로맨스에 빠진 사랑</p>
                         <img src="/assets/img/genre03.png" alt="hearticon" />

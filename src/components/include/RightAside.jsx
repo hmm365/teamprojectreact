@@ -6,18 +6,18 @@ const RightAside = () => {
         document.querySelectorAll('.container').forEach((el) => {
             el.classList.add('active')
         })
-        document.querySelector('#aisde').classList.add('hide')
+        document.querySelector('#aside').classList.add('hide')
     }
     const leftAction = () => {
         document.querySelectorAll('.container').forEach((el) => {
             el.classList.remove('active')
         })
-        document.querySelector('#aisde').classList.remove('hide')
+        document.querySelector('#aside').classList.remove('hide')
     }
 
     return (
         <>
-            <aside id="aisde" className="">
+            <aside id="aside" className="">
                 <span className="rightAllow ir" onClick={rightAction}>
                     오른쪽화살표
                 </span>
