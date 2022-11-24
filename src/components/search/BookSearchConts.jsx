@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchAPI } from '../../utils/fetchAPI'
-import { Loader } from '../index'
+import { Loader, BookSearch } from '../index'
 import { bgadd } from '../../utils/loadBody'
+
 const BookSearchConts = () => {
     const { searchKeyword, answerKeyword } = useParams()
     const [books, setBooks] = useState(null)
@@ -18,23 +19,9 @@ const BookSearchConts = () => {
         fetchBooksData()
     }, [searchKeyword, page])
 
-    if (!books) return <Loader />
-    console.log(books)
-    return (
-        <>
-            <section id="resultCont" className="container" onLoad={bgadd}>
-                <div className="resultSearch">
-                    <div className="resultSearch__info">
-                        <h2>{answerKeyword.replace('!@@!', '/')}</h2>
-                        <span>총 {books.totalItems}권의 검색 결과</span>
-                    </div>
-                    <div className="resultButton">
-                        <input type="text" placeholder="원하는 책을 검색해보세요!" />
-                        <button type="submit" className="ir">
-                            버튼
-                        </button>
-                    </div>
-                </div>
+    const BookSearchResult = ({ books }) => {
+        return (
+            <>
                 {books.items.map((book) => (
                     <div className="box" key={book.id}>
                         <figure>
@@ -54,6 +41,47 @@ const BookSearchConts = () => {
                         </div>
                     </div>
                 ))}
+            </>
+        )
+    }
+
+    const BookSearchFalse = ({ books }) => {
+        return (
+            <>
+                <div className="box">
+                    <figure>
+                        <img src="/assets/img/noBookImg.png" alt="북북에서" />
+                    </figure>
+                    <div className="box__info">
+                        <h2 className="title">{books} 와 관련된 내용을 찾을수 없습니다.</h2>
+                    </div>
+                </div>
+            </>
+        )
+    }
+
+    if (!books) return <Loader />
+
+    let bookSearchAnser
+    if (books.totalItems === 0) {
+        console.log('flase')
+        bookSearchAnser = <BookSearchFalse books={answerKeyword} />
+    } else {
+        console.log('true')
+        bookSearchAnser = <BookSearchResult books={books} />
+    }
+
+    return (
+        <>
+            <section id="resultCont" className="container" onLoad={bgadd}>
+                <div className="resultSearch">
+                    <div className="resultSearch__info">
+                        <h2>{answerKeyword?.replace('!@@!', '/')}</h2>
+                        <span>총 {books?.totalItems}권의 검색 결과</span>
+                    </div>
+                    <BookSearch />
+                </div>
+                {bookSearchAnser}
             </section>
         </>
     )
