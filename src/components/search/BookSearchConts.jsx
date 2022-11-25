@@ -8,23 +8,28 @@ const BookSearchConts = () => {
     const { searchKeyword, answerKeyword } = useParams()
     const [books, setBooks] = useState(null)
     const [page, setPage] = useState(1)
+    const [startIndex, setStartIndex] = useState(0)
     const [loading, setLoading] = useState(true)
 
     const prevClik = () => {
         if (page !== 1) {
             setPage(page - 1)
+            setStartIndex(startIndex - 20)
         }
     }
     const nextClik = () => {
         let pageEnd = Math.ceil(books?.totalItems / 20)
         if (page !== pageEnd) {
             setPage(page + 1)
+            setStartIndex(startIndex + 20)
         }
     }
+
     const fetchBooksData = useCallback(async () => {
+        console.log(startIndex)
         setLoading(true) // api 호출 전에 true로 변경하여 로딩화면 띄우기
 
-        const data = await fetchAPI(`q=${searchKeyword}&startIndex=${page}`)
+        const data = await fetchAPI(`q=${searchKeyword}&startIndex=${startIndex}`)
         setBooks(data)
 
         setLoading(false) // api 호출 완료 됐을 때 false로 변경하려 로딩화면 숨김처리
@@ -33,6 +38,7 @@ const BookSearchConts = () => {
     useEffect(() => {
         fetchBooksData()
     }, [fetchBooksData])
+    console.log(books)
     return (
         <>
             <section id="resultCont" className="container" onLoad={bgadd}>
@@ -41,7 +47,7 @@ const BookSearchConts = () => {
                         <h2>{answerKeyword?.replace('!@@!', '/')}</h2>
                         <span>총 {books?.totalItems}권의 검색 결과</span>
                     </div>
-                    <BookSearch setPage={setPage} />
+                    <BookSearch setPage={setPage} setStartIndex={setStartIndex} />
                 </div>
                 {loading ? <Loader /> : <BookSearchResult books={books} answerKeyword={answerKeyword} />}
                 <div className="search__pageInner">

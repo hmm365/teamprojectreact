@@ -17,7 +17,7 @@ const BookSearchResult = ({ books, answerKeyword }) => {
     } else {
         return (
             <>
-                {books?.items.map((book) => (
+                {books?.items?.map((book) => (
                     <div className="box" key={book.id}>
                         <figure>
                             {book?.volumeInfo?.imageLinks?.thumbnail === undefined ? (
