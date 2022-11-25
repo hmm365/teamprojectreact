@@ -33,7 +33,7 @@ const BookSearchConts = () => {
         setBooks(data)
 
         setLoading(false) // api 호출 완료 됐을 때 false로 변경하려 로딩화면 숨김처리
-    }, [searchKeyword, page])
+    }, [searchKeyword, startIndex])
 
     useEffect(() => {
         fetchBooksData()
