@@ -12,22 +12,21 @@ const BookSearchConts = () => {
     const [loading, setLoading] = useState(true)
 
     const prevClik = () => {
-        if (page !== 1) {
+        if (page !== 1 && Math.ceil(books?.totalItems / 20) !== 0) {
             setPage(page - 1)
             setStartIndex(startIndex - 20)
         }
     }
     const nextClik = () => {
         let pageEnd = Math.ceil(books?.totalItems / 20)
-        if (page !== pageEnd) {
+        if (page !== pageEnd && pageEnd !== 0) {
             setPage(page + 1)
             setStartIndex(startIndex + 20)
         }
     }
 
     const fetchBooksData = useCallback(async () => {
-        console.log(startIndex)
-        setLoading(true) // api 호출 전에 true로 변경하여 로딩화면 띄우기
+        setLoading(true) // api 호출 전에 true로 변경하여 로딩화면 띄우기ㅌ
 
         const data = await fetchAPI(`q=${searchKeyword}&startIndex=${startIndex}`)
         setBooks(data)
@@ -38,7 +37,7 @@ const BookSearchConts = () => {
     useEffect(() => {
         fetchBooksData()
     }, [fetchBooksData])
-    console.log(books)
+
     return (
         <>
             <section id="resultCont" className="container" onLoad={bgadd}>
