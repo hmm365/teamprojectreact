@@ -133,6 +133,37 @@
     cursor: pointer;
 }
 
+.search__pageInner {
+    display: flex;
+    margin: 0 auto;
+    width: 40%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+}
+.search__prev,
+.search__next {
+    display: inline-block;
+    cursor: pointer;
+}
+.search__prev span,
+.search__next span {
+    width: 40px;
+    height: 40px;
+}
+.search__pageNum {
+    font-family: var(--Timon);
+    font-size: 20px;
+    font-weight: 900;
+}
+.search__prev span {
+    background: url(../img/leftArrow.svg);
+}
+.search__next span {
+    background: url(../img/rightArrow.svg);
+}
+
 #resultCont.active {
     width: 70%;
 }

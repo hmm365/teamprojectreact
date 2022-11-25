@@ -10,11 +10,21 @@ const BookSearchConts = () => {
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
 
+    const prevClik = () => {
+        if (page !== 1) {
+            setPage(page - 1)
+        }
+    }
+    const nextClik = () => {
+        let pageEnd = Math.ceil(books?.totalItems / 20)
+        if (page !== pageEnd) {
+            setPage(page + 1)
+        }
+    }
     const fetchBooksData = useCallback(async () => {
         setLoading(true) // api 호출 전에 true로 변경하여 로딩화면 띄우기
 
         const data = await fetchAPI(`q=${searchKeyword}&startIndex=${page}`)
-        setPage(1)
         setBooks(data)
 
         setLoading(false) // api 호출 완료 됐을 때 false로 변경하려 로딩화면 숨김처리
@@ -31,9 +41,18 @@ const BookSearchConts = () => {
                         <h2>{answerKeyword?.replace('!@@!', '/')}</h2>
                         <span>총 {books?.totalItems}권의 검색 결과</span>
                     </div>
-                    <BookSearch />
+                    <BookSearch setPage={setPage} />
                 </div>
                 {loading ? <Loader /> : <BookSearchResult books={books} answerKeyword={answerKeyword} />}
+                <div className="search__pageInner">
+                    <button type="button" className="search__prev" onClick={prevClik}>
+                        <span className="ir">이전</span>
+                    </button>
+                    <span className="search__pageNum">{page}</span>
+                    <button type="button" className="search__next" onClick={nextClik}>
+                        <span className="ir">다음</span>
+                    </button>
+                </div>
             </section>
         </>
     )

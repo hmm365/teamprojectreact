@@ -22,7 +22,7 @@
         {
             "num": 2,
             "questions": "02. 오늘 당신의 기분은 어떠신가요?",
-            "icon": "quiz1.png",
+            "icon": "quiz2.png",
             "answer": [
                 {
                     "desc": "행복하다.",

@@ -1,13 +1,14 @@
 import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const BookSearch = () => {
+const BookSearch = ({ setPage }) => {
     const inputRef = useRef()
     const navigate = useNavigate()
 
     const handleSearch = () => {
         const value = inputRef.current.value
         if (value) {
+            setPage(1)
             navigate(`/booksearch/intitle:${value}/${value}`)
             inputRef.current.value = ''
         } else {
