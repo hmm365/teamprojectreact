@@ -10,5 +10,6 @@ export { default as QuizResult } from './quiz/QuizResult'
 
 export { default as BookSearchConts } from './search/BookSearchConts'
 export { default as BookSearch } from './search/BookSearch'
+export { default as BookSearchResult } from './search/BookSearchResult'
 
 export { default as TagConts } from './tag/TagConts'

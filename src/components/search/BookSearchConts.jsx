@@ -1,76 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchAPI } from '../../utils/fetchAPI'
-import { Loader, BookSearch } from '../index'
+import { Loader, BookSearch, BookSearchResult } from '../index'
 import { bgadd } from '../../utils/loadBody'
 
 const BookSearchConts = () => {
     const { searchKeyword, answerKeyword } = useParams()
     const [books, setBooks] = useState(null)
     const [page, setPage] = useState(1)
+    const [loading, setLoading] = useState(true)
 
-    //&startIndex=1 << 페이징할때 쓸거
-    useEffect(() => {
-        const fetchBooksData = async () => {
-            const data = await fetchAPI(`q=${searchKeyword}&startIndex=${page}`)
-            setPage(1)
-            setBooks(data)
-        }
-        fetchBooksData()
+    const fetchBooksData = useCallback(async () => {
+        setLoading(true) // api 호출 전에 true로 변경하여 로딩화면 띄우기
+        const data = await fetchAPI(`q=${searchKeyword}&startIndex=${page}`)
+        setPage(1)
+        setBooks(data)
+        setLoading(false) // api 호출 완료 됐을 때 false로 변경하려 로딩화면 숨김처리
     }, [searchKeyword, page])
 
-    const BookSearchResult = ({ books }) => {
-        return (
-            <>
-                {books.items.map((book) => (
-                    <div className="box" key={book.id}>
-                        <figure>
-                            {book?.volumeInfo?.imageLinks?.thumbnail === undefined ? (
-                                <img src="/assets/img/noBookImg.png" alt="북북에서" />
-                            ) : (
-                                <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt="북북에서" />
-                            )}
-                        </figure>
-                        <div className="box__info">
-                            <h2 className="title">{book?.volumeInfo?.title}</h2>
-                            <p className="author">{book?.volumeInfo?.authors === undefined ? '작자미상' : book?.volumeInfo?.authors}</p>
-                            <p className="date">{book?.volumeInfo?.publishedDate?.replace(/-/g, '.')}</p>
-                            <button className="box__button" type="button">
-                                view
-                            </button>
-                        </div>
-                    </div>
-                ))}
-            </>
-        )
-    }
-
-    const BookSearchFalse = ({ books }) => {
-        return (
-            <>
-                <div className="box">
-                    <figure>
-                        <img src="/assets/img/noBookImg.png" alt="북북에서" />
-                    </figure>
-                    <div className="box__info">
-                        <h2 className="title">{books} 와 관련된 내용을 찾을수 없습니다.</h2>
-                    </div>
-                </div>
-            </>
-        )
-    }
-
-    if (!books) return <Loader />
-
-    let bookSearchAnser
-    if (books.totalItems === 0) {
-        console.log('flase')
-        bookSearchAnser = <BookSearchFalse books={answerKeyword} />
-    } else {
-        console.log('true')
-        bookSearchAnser = <BookSearchResult books={books} />
-    }
-
+    useEffect(() => {
+        fetchBooksData()
+    }, [fetchBooksData])
     return (
         <>
             <section id="resultCont" className="container" onLoad={bgadd}>
@@ -81,7 +31,7 @@ const BookSearchConts = () => {
                     </div>
                     <BookSearch />
                 </div>
-                {bookSearchAnser}
+                {loading ? <Loader /> : <BookSearchResult books={books} answerKeyword={answerKeyword} />}
             </section>
         </>
     )
