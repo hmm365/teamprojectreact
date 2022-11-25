@@ -2,7 +2,7 @@ import React from 'react'
 
 const RightAside = () => {
     const rightAction = () => {
-        document.body.style.minHeight = document.querySelector('.container').offsetHeight + 'px'
+        // document.body.style.minHeight = document.querySelector('.container').offsetHeight + 'px'
         document.querySelectorAll('.container').forEach((el) => {
             el.classList.add('active')
         })

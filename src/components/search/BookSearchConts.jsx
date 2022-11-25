@@ -12,9 +12,11 @@ const BookSearchConts = () => {
 
     const fetchBooksData = useCallback(async () => {
         setLoading(true) // api 호출 전에 true로 변경하여 로딩화면 띄우기
+
         const data = await fetchAPI(`q=${searchKeyword}&startIndex=${page}`)
         setPage(1)
         setBooks(data)
+
         setLoading(false) // api 호출 완료 됐을 때 false로 변경하려 로딩화면 숨김처리
     }, [searchKeyword, page])
 
