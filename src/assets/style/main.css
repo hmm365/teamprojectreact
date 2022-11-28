@@ -105,6 +105,9 @@
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.142);
     text-align: center;
 }
+#mainConts .searchWrap .resultButton input {
+    height: 100%;
+}
 #mainConts .searchWrap .resultButton button {
     position: absolute;
     right: 9px;

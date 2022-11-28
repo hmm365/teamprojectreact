@@ -18,6 +18,9 @@ const MainConts = () => {
     const onLoad = () => {
         // console.log("hi?");
         document.body.removeAttribute('id')
+        document.querySelector('.memu__list').style.display = 'none'
+        document.querySelector('.leftAllow').style.display = 'none'
+        document.querySelector('#aside').style.display = 'none'
     }
 
     const [images, setImages] = useState('')
