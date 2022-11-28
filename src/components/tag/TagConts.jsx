@@ -8,7 +8,7 @@ const TagConts = () => {
                 <div className="tagWrap">
                     <div className="taginner">
                         <Link to="/booksearch/사랑+소설/로맨스에 빠진 사랑" className="tag__first">
-                            <img src="/assets/img/genre03.png" alt="hearticon" />
+                            <img src="/assets/img/genre03.png" alt="genre03" />
                             <p>로맨스에 빠진 사랑</p>
                         </Link>
                         <div className="tag__center">
@@ -18,7 +18,7 @@ const TagConts = () => {
                             </Link>
                             <Link to="/booksearch/유아+어린이+동화/유아 !@@! 어린이" className="tag__third">
                                 <p>유아 / 어린이</p>
-                                <img src="/assets/img/genre02.png" alt="" />
+                                <img src="/assets/img/genre02.png" alt="genre02" />
                             </Link>
                         </div>
                         <Link to="/booksearch/SF+판타지/SF !@@! 판타지" className="tag__fourth">
@@ -29,7 +29,7 @@ const TagConts = () => {
                     <Link to="/booksearch/사랑+소설/로맨스에 빠진 사랑" className="tag__right">
                         <span className="tag__title">이런 건 어떠신가요?</span>
                         <p>로맨스에 빠진 사랑</p>
-                        <img src="/assets/img/genre03.png" alt="hearticon" />
+                        <img src="/assets/img/genre03.png" alt="genre03" />
                     </Link>
                 </div>
             </section>

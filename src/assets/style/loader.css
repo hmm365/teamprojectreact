@@ -1,5 +1,8 @@
+#resultCont .loaderWrap {
+    padding: 20%;
+}
+
 .loader {
-    position: absolute;
     position: absolute;
     left: 50%;
     top: 50%;

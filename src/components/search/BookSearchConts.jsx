@@ -49,6 +49,7 @@ const BookSearchConts = () => {
                     <BookSearch setPage={setPage} setStartIndex={setStartIndex} />
                 </div>
                 {loading ? <Loader /> : <BookSearchResult books={books} answerKeyword={answerKeyword} />}
+                {/* {loading ? <Loader /> : <Loader />} */}
                 <div className="search__pageInner">
                     <button type="button" className="search__prev" onClick={prevClik}>
                         <span className="ir">이전</span>
