@@ -36,7 +36,7 @@ const BooksSlider = ({ sliderTwo }) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <img src={process.env.PUBLIC_URL + '/img/booksBar.svg'} alt="bookBar"></img>
+            <img src={process.env.PUBLIC_URL + '/assets/img/booksBar.svg'} alt="bookBar"></img>
         </>
     )
 }
