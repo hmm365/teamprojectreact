@@ -28,7 +28,7 @@ const BookSearchResult = ({ books, answerKeyword }) => {
                         </figure>
                         <div className="box__info">
                             <h2 className="title">{book?.volumeInfo?.title}</h2>
-                            <p className="author">{book?.volumeInfo?.authors === undefined ? '작자미상' : book?.volumeInfo?.authors}</p>
+                            <p className="author">{book?.volumeInfo?.authors === undefined ? '작자미상' : book?.volumeInfo?.authors[0]}</p>
                             <p className="date">{book?.volumeInfo?.publishedDate?.replace(/-/g, '.')}</p>
                             <button className="box__button" type="button">
                                 view

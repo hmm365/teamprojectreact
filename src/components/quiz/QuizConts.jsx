@@ -5,6 +5,9 @@ import { useState } from 'react'
 import { bgadd } from '../../utils/loadBody'
 
 const QuizConts = () => {
+    //나중에 파람스로 받아서 새로고침 하는걸로..?
+    //퀴즈에 num 넣어서 하던가 아니면 주던가? 둘중하나?어사이드에서 -> 받고 --> 뺏고
+    //아래있는 useState( {파람스} )
     const [num, setNum] = useState(1)
     const [score, setScore] = useState(0)
 
