@@ -1,0 +1,166 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+.booksMenu__list {
+    text-align: center;
+    flex-direction: column;
+    width: 20%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 70px 15px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px 0px 0px 30px;
+}
+.booksMenu__list > h2 {
+    font-family: var(--ObjSans);
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 120%;
+    color: #111053;
+    margin-bottom: 20px;
+}
+.booksIcon {
+    width: 100%;
+    margin-bottom: 40px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.booksIcon:hover {
+    transform: scale(1.1);
+}
+
+/* .booksMenu__list > img {
+    width: 100%;
+    vertical-align: top;
+} */
+
+.booksMenu__list > a {
+    display: inline-block;
+    background: #f3f3f6;
+    padding: 8% 20%;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 140%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.booksMenu__list > a:nth-child(4) {
+    padding: 8% 24%;
+}
+.booksMenu__list > button {
+    display: flex;
+    align-items: center;
+    font-family: var(--ObjSans);
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 140%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.booksMenu__list > button > span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url(../img/leftArrow.svg);
+}
+.booksMenu__list > button > em {
+    padding-top: 5px;
+    padding-left: 20px;
+}
+
+/* main */
+#booksSection {
+    /* width: 80%; */
+}
+.booksWrap {
+    /* margin-top: 5%;
+    margin-left: 8%;
+    min-height: 100vh; */
+}
+.books__header {
+    display: flex;
+    justify-content: space-between;
+    /* margin-right: 8%; */
+    margin-bottom: 50px;
+    align-items: center;
+}
+.books__header > h2 {
+    font-family: var(--Timon);
+    font-size: 2.2vw;
+}
+
+.smallSearch__wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.smallSearchBar {
+    appearance: none;
+    border: 0;
+    background-color: #fff;
+    width: 32vw;
+    height: 65px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.142);
+    text-align: center;
+}
+.smallSearchBtn {
+    position: absolute;
+    right: 9px;
+    top: 7px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/SearchIcon01.svg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.bookAll__img {
+    width: 20% !important;
+    margin-bottom: 20px;
+}
+
+.bookAll__img > a > span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line__two {
+    margin-top: 40px;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1200px) {
+    .booksMenu__list {
+        width: 23%;
+    }
+    #booksSection {
+        width: 77%;
+    }
+    .booksIcon {
+        margin-bottom: 60px;
+    }
+    .booksMenu__list > button {
+        margin-top: 30px;
+    }
+}
+
+#booksSection.active {
+    width: 68%;
+}
+#booksSection.active .bookAll__img {
+    width: 16% !important;
+    margin-bottom: 20px;
+}

@@ -1,7 +1,8 @@
 .loader {
     position: absolute;
-    left: 47%;
-    top: 150%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
 .book {
     --color: #000;

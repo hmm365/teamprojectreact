@@ -7,11 +7,10 @@
     --bg-dark-border: #2e2e30;
     --font-size: 16px;
     --font-height: 1.4;
-    --font-color: #202020;
+    --font-color: #111053;
+    --font-sub-color: #313131;
 
-    --Blinker: 'Blinker', sans-serif;
     --Nexon: 'NEXON Lv1 Gothic OTF', sans-serif;
-    --Nanum: 'NanumSquare', sans-serif;
     --ObjSans: 'Object Sans', sans-serif;
     --Timon: 'TmonMonsori', sans-serif;
 }
@@ -99,7 +98,7 @@ select {
 }
 button {
     border: 0;
-    background: inherit;
+    background: transparent;
 }
 /* // 스타일 초기화 */
 h1,

@@ -1,0 +1,73 @@
+.booksIcon.pre {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.previewWrap {
+    position: relative;
+    height: 100vh;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.previewWrap > h2 {
+    font-family: var(--Timon);
+    font-size: 2vw;
+    margin-left: 3%;
+}
+
+.previewInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.previewBox {
+    position: absolute;
+    top: 7%;
+    width: 95%;
+    background-color: #fdfcfc;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.284);
+    box-sizing: border-box;
+    padding: 8%;
+}
+
+.previewCloseBtn {
+    position: absolute;
+    right: 12px;
+    top: -45px;
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/previewClose.svg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.previewImg {
+    width: 21vw;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.284);
+}
+
+.preview__desc {
+    width: 50%;
+}
+.preview__desc .title {
+    font-family: var(--Timon);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+.preview__desc .writer {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+.preview__desc .summary {
+    line-height: 1.7;
+}

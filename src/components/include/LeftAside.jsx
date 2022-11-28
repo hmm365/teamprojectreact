@@ -12,7 +12,7 @@ const LeftAside = () => {
             <img src="/assets/img/navIcon2.png" alt="아이콘2" />
             <ul>
                 <li>
-                    <Link to="/bookmain" className="link" onClick={bgadd}>
+                    <Link to="/books" className="link" onClick={bgadd}>
                         Books
                     </Link>
                 </li>

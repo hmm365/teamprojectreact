@@ -17,7 +17,7 @@ const RightAside = () => {
 
     return (
         <>
-            <aside id="aside" className="">
+            <aside id="aside" className="hide">
                 <span className="rightAllow ir" onClick={rightAction}>
                     오른쪽화살표
                 </span>
